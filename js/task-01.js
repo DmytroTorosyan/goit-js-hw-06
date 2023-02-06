@@ -1,12 +1,13 @@
-const totalEl = document.querySelectorAll('.item');
-console.log(`Number of categories: ${totalEl.length}`);
+const itemList = document.querySelectorAll(".item");
 
-const elArray = [...totalEl]
-    .map(
-          el =>`Category: ${el.children[0].textContent}
-        Elements: ${el.children[1].children.length}`
-).join('\n');
-console.log(elArray)
+console.log(`Number of categories: ${itemList.length}`);
+itemList.forEach((item) => {
+  const sublist = item.querySelectorAll("ul li");
+  const title = item.querySelector("h2");
+  console.log("");
+  console.log(`Category: ${title.textContent}`);
+  console.log(`Elements: ${sublist.length}`);
+});
 
 
 
